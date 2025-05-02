@@ -46,7 +46,7 @@ const interceptRequestFor = (instance: AxiosInstance) => {
       return response;
     },
     (error) => {
-      if (error.response.status === 401) {
+      if (error?.response?.status === 401) {
         localStorage.clear();
         toast.error("Session expired. Please sync account.");
       }
